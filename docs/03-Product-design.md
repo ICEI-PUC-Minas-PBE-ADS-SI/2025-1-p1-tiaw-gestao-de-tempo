@@ -42,32 +42,17 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 ### Requisitos funcionais
 
 | ID     | Descrição do Requisito                                   | Prioridade |
-| ------ | ---------------------------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre tarefas ⚠️ EXEMPLO ⚠️ | ALTA       |
-| RF-002 | Emitir um relatório de tarefas no mês ⚠️ EXEMPLO ⚠️ | MÉDIA     |
+| RF-001 | O software funcionra como uma agenda.                    | ALTA |
+| RF-002 | sistemas de estímulos para evitar a procrastinação dos usuários.| ALTA |
+| RF-003 | Banco de horas, para melhorar a gestão de tempo dos usuários| MÉDIA |
 
 ### Requisitos não funcionais
 
 | ID      | Descrição do Requisito                                                              | Prioridade |
 | ------- | ------------------------------------------------------------------------------------- | ---------- |
-| RNF-001 | O sistema deve ser responsivo para rodar em dispositivos móveis ⚠️ EXEMPLO ⚠️ | MÉDIA     |
-| RNF-002 | Deve processar as requisições do usuário em no máximo 3 segundos ⚠️ EXEMPLO ⚠️          | BAIXA      |
-
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Com base nas histórias de usuários, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos não funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-
-Lembre-se de que cada requisito deve corresponder a uma e somente uma característica-alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas histórias de usuários foram cobertos.
+| RNF-001 | O sistema estará disponível 7 dias por semana, 24 horas por dia. | MÉDIA |
+| RNF-002 | O sistema será focado em smartphones, mas poderá ser utilizado em um computador.| BAIXA |
+| RNF-003 | Ninguém além da equipe planejadora, terá acesso à rotina dos outros usuários.| ALTA |
 
 > **Links úteis**:
 > - [O que são requisitos funcionais e requisitos não funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
@@ -81,6 +66,5 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 O projeto está restrito aos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|001| O projeto deverá ser entregue até o final do semestre ⚠️ EXEMPLO ⚠️ |
-|002| Não é permitido o desenvolvimento de um módulo de back-end  ⚠️ EXEMPLO ⚠️  |
+|001|  aluno não pode ser matriculado em três matérias. |
+|002| É necessário estar trabalhando e estudando.0 |
