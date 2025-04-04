@@ -13,7 +13,7 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 * Gustavo Almeida Reis
 * Miguel Campos Soares Querino 
 * Rafael Araujo Pereira
-* Nome completo do aluno 4
+* Christian Augusto Soares Diniz
 * Nome completo do aluno 5
 * Nome completo do aluno 6
 
