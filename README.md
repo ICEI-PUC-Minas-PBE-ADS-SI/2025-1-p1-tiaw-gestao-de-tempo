@@ -14,7 +14,7 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 * Miguel Campos Soares Querino 
 * Rafael Araujo Pereira
 * Christian Augusto Soares Diniz
-* Nome completo do aluno 5
+* Thaís Paula Miranda
 * Nome completo do aluno 6
 
 ## Professor
