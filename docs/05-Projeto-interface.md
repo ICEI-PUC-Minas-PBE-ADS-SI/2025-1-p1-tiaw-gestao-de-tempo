@@ -8,13 +8,9 @@
  Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados na parte de <a href="03-Product-design.md"> product design</a></span>.
 
  ## User flow
+[text](<docs\files\caminho do usuario.pdf>)
 
-
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
-
-Fluxo de usuário (user flow) é uma técnica que permite ao desenvolvedor mapear todo o fluxo de navegação do usuário na aplicação. Essa técnica serve para alinhar os caminhos e as possíveis ações que o usuário pode realizar junto com os membros da equipe.
-
-**✳️✳️✳️ COLOQUE AQUI O USER FLOW ✳️✳️✳️**
+Caminho do usuario
 
 ![Exemplo de fluxo de telas](images/exemplo-userflow.png)
 
@@ -26,9 +22,9 @@ Fluxo de usuário (user flow) é uma técnica que permite ao desenvolvedor mapea
 
 ## Wireframes
 
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
+[text](<docs\files\Wireframe (1).pdf>)
 
-São protótipos usados no design de interface para sugerir a estrutura de um site web e seu relacionamento entre suas páginas. Um wireframe web é uma ilustração que mostra o layout dos elementos fundamentais na interface.
+Wireframe da pagina principal
 
 **✳️✳️✳️ COLOQUE AQUI OS PROTÓTIPOS DE TELAS COM TÍTULO E DESCRIÇÃO ✳️✳️✳️**
 
@@ -56,4 +52,4 @@ Descrição para a tela XPTO
 
 **✳️✳️✳️ COLOQUE AQUI UM IFRAME COM SEU PROTÓTIPO INTERATIVO ✳️✳️✳️**
 
-✅ [Protótipo interativo](https://marvelapp.com/prototype/4hd6091?emb=1&iosapp=false&frameless=false)  ⚠️ EXEMPLO ⚠️
+✅ [Protótipo interativo](https://www.figma.com/design/NHJspbiAXXMgryIjO3T0R5/Chris1?node-id=0-1&p=f&t=Lk8Obqjw2pGwtjaD-0)

@@ -12,7 +12,11 @@ Com base na análise das personas, foram identificadas as seguintes histórias d
 
 |EU COMO... Amália   | QUERO/PRECISO de um software que organize e otimize meu dia a dia |PARA que meu tempo seja usado da melhor forma.|
 
-[text](<files/Historias de Usuario.pdf>)
+|EU COMO... William   | QUERO/PRECISO de aplicativo que me ajude a controlar meu tempo |PARA que eu consiga descansar e ralizar minhas tarrefas melhor.|
+
+|EU COMO... Eliane   | QUERO/PRECISO de um softwaare que auxilie meu controle de tempo |PARA que eu pare de procastinar.|
+
+[text](images/Personas%20e%20Histórias%20(2).jpg)
 
 > **Links úteis**:
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
