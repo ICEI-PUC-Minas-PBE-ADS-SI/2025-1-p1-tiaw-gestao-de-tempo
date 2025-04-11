@@ -12,8 +12,6 @@
 
 Caminho do usuario
 
-![Exemplo de fluxo de telas](images/exemplo-userflow.png)
-
 ## Wireframes
 
 [text](<docs\files\Wireframe (1).pdf>)
