@@ -1,0 +1,153 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(128, 128, 128, 0.418);
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 700px;
+  margin: 40px auto 40px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.container-progresso {
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 25px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin: 20px 0 40px 0;
+}
+
+.barra-progresso {
+  width: 0%;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 25px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.3s ease;
+}
+
+.dia-semana-container {
+  background-color: gray;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  height: 70px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dia-semana {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.container-tarefas {
+  background-color: rgba(128, 228, 136, 0.685);
+  border-radius: 15px;
+  padding: 10px 20px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+}
+
+.tarefas {
+  background-color: rgba(66, 88, 68, 0.651);
+  border-radius: 5px;
+  margin: 20px 5% 20px 5%;
+  height: 50px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  color: rgb(59, 73, 61);
+  font-weight: 600;
+}
+
+.titulo-tarefa p {
+  margin: 0;
+}
+
+.tempo-tarefa {
+  color: #355e3b;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.tempo-tarefa i {
+  margin-right: 5px;
+}
+
+.progresso-tarefa {
+  padding-left: 20px;
+  color: rgba(109, 109, 109, 0.726);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  gap: 15px;
+}
+
+.botao-anterior,
+.botao-proximo {
+  flex: 1;
+  border-radius: 40px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.botao-anterior {
+  background-color: grey;
+}
+
+.botao-anterior:hover {
+  background-color: #5a5a5a;
+}
+
+.botao-proximo {
+  background-color: rgba(65, 209, 65, 0.842);
+}
+
+.botao-proximo:hover {
+  background-color: #3dbd3d;
+}
+
+.footer {
+  background-color: #6ca36479;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #2f4f2f;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}

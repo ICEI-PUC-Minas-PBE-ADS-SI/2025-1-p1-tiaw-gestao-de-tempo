@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(to right, purple, steelblue);
+}
+
+.cabecalho {
+    display: flex;
+    width: 100%;
+}
+
+.personaagem img {
+    border-radius: 100%;
+    width: 100%;
+}
+
+.personaagem {
+    width: 100px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.cabecalho button  {
+    background-color: steelblue;
+    border: 1px solid;
+    width: 100px;
+    outline: none;
+    padding: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
+.config {
+    margin: 1px;
+}
+
+.config img {
+    height: 40px;
+    width: 50px;
+}
+
+.config img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+main {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.caminho {
+    width: 15%;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    background: #e0e0e0;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dia {
+    display: flex;
+    width: 100%;
+    margin: 20px;
+}
+
+.dia.left {
+    justify-content: flex-start;
+}
+
+.dia.right {
+    justify-content: flex-end;
+}
+
+.dia:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.semana {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 90px;
+    background: blueviolet;
+    border-radius: 47%;
+}
+
+aside {
+    width: 25%;
+    height: 60%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+svg {
+    position: absolute;
+    left: 47%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media screen and (max-width: 480px) {
+
+    .cabecalho button {
+        width: 50px;
+        font-size: 10px;
+    }
+
+    .config img {
+        width: 13px;
+        height: 13px;
+    }
+
+    .semana{
+        width: 100px;
+        height: 50px;
+    }
+
+    .circle{
+        width: 30px;
+        height: 30px;
+    }
+
+}

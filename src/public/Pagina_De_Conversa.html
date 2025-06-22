@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/pgcon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="container1">
+            <div class="container1_header">
+                <button class="botao_voltar"><a href="Pagina_Inicial.html"><img src="imagens/botao_voltar.png" alt="" width="20px"></a></button>
+
+                <div class="barra_de_pesquisa">
+                    <button class="lupa"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input class="barra_de_pesquisa1" type="search" placeholder="Buscar">
+                </div>
+
+                <button class="botao_notificacoes"><i class="fa-solid fa-bell"></i></button>
+            </div>
+
+            <p>Mensagens</p>
+
+            <a id="chat0" href="Pagina_De_Conversa.html?id=0">
+                <div class="conversas_perfil">
+                    <img class="imagem_perfil" src="imagens/imagem_perfil.jpg" alt="">
+                    <p class="nome_perfil">Usuário_1</p>
+                </div>
+            </a>
+
+            <a id="chat1" href="Pagina_De_Conversa.html?id=1">
+                <div class="conversas_perfil">
+                    <img class="imagem_perfil" src="imagens/imagem_perfil.jpg" alt="">
+                    <p class="nome_perfil">Usuário_2</p>
+                </div>
+            </a>
+
+            <a id="chat2" href="Pagina_De_Conversa.html?id=2">
+                <div class="conversas_perfil">
+                    <img class="imagem_perfil" src="imagens/imagem_perfil.jpg" alt="">
+                    <p class="nome_perfil">Usuário_3</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="container2">
+            <div class="barra_contato">
+                <img id="foto0" class="imagem_perfil" src="imagens/imagem_perfil.jpg" alt="">
+                <p id="usuario0" class="nome_perfil"></p>
+            </div>
+
+            <div class="display_mensagem" id="messageDisplay">
+                <p id="display"></p>
+            </div>
+
+            <div class="barra_Mdiv">
+                <div class="barra_de_mensagem">
+                    <input class="barra_de_mensagem1" type="text" placeholder="Mensagem..." id="messageInput">
+                    <button class="botao_enviar" id="botao_enviar1">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/pgcon.js"></script>
+    <script>
+
+        let params = new URLSearchParams(window.location.search);
+        let trueid = params.get("id");
+
+        if (trueid !== null && dados[trueid]) {
+            document.getElementById("foto0").src = dados[trueid].foto;
+            document.getElementById("usuario0").textContent = dados[trueid].usuario;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const messageInput = document.getElementById('messageInput');
+            const botao_enviar1 = document.getElementById('botao_enviar1');
+            const messageDisplay = document.getElementById('messageDisplay');
+
+            
+            function addMessage(sender, message, type) { 
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', type); 
+                messageDiv.textContent = `${sender}: ${message}`;
+                messageDisplay.appendChild(messageDiv)
+                messageDisplay.scrollTop = messageDisplay.scrollHeight;
+            }
+
+            function getBotResponse(userMessage) {
+                const lowerCaseMessage = userMessage.toLowerCase();
+
+                if (lowerCaseMessage.includes("olá") || lowerCaseMessage.includes("oi") || lowerCaseMessage.includes("opa")) {
+                    return "Olá! Como posso ajudar?";
+                } else if (lowerCaseMessage.includes("tudo bem")) {
+                    return "Estou bem, obrigado por perguntar! E você?";
+                } else if (lowerCaseMessage.includes("estou bem")) {
+                    return "Posso te ajudar com informações sobre nossos serviços.";
+                } else if (lowerCaseMessage.includes("tchau") || lowerCaseMessage.includes("adeus")) {
+                    return "Até logo! Volte sempre.";
+                } else {
+                    return "Não sou capaz de responder. Por favor, tente outra mensagem.";
+                }
+            }
+
+            botao_enviar1.addEventListener('click', () => {
+                const userMessage = messageInput.value.trim();
+                if (userMessage !== '') {
+                    addMessage('Você', userMessage, 'user');
+                    messageInput.value = ''; 
+
+                    setTimeout(() => {
+                        const botResponse = getBotResponse(userMessage);
+                        addMessage('Chatbot', botResponse, 'bot');
+                    }, 500); 
+                }
+            });
+
+            messageInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    botao_enviar1.click();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

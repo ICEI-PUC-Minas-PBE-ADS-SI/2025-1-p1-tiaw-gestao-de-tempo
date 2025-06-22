@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Progresso Semanal</title>
+  <link rel="stylesheet" href="CSS/progresso-semanal.css" />
+</head>
+<body>
+  <main>
+    <h1 class="titulo-principal">Progresso Semanal</h1>
+
+    <div class="container-dia-semana">
+      <a href="tarefa-segunda.html" class="dia-semana-link">
+        <div class="dia-semana">SEGUNDA-FEIRA</div>
+      </a>
+      <div class="container-progresso">
+        <div class="barra-progresso" id="barra-segunda">0%</div>
+      </div>
+    </div>
+
+    <div class="container-dia-semana">
+      <a href="tarefa-terca.html" class="dia-semana-link">
+        <div class="dia-semana">TERÇA-FEIRA</div>
+      </a>
+      <div class="container-progresso">
+        <div class="barra-progresso" id="barra-terca">0%</div>
+      </div>
+    </div>
+
+    <div class="container-dia-semana">
+      <a href="tarefa-quarta.html" class="dia-semana-link">
+        <div class="dia-semana">QUARTA-FEIRA</div>
+      </a>
+      <div class="container-progresso">
+        <div class="barra-progresso" id="barra-quarta">0%</div>
+      </div>
+    </div>
+
+    <div class="container-dia-semana">
+      <a href="tarefa-quinta.html" class="dia-semana-link">
+        <div class="dia-semana">QUINTA-FEIRA</div>
+      </a>
+      <div class="container-progresso">
+        <div class="barra-progresso" id="barra-quinta">0%</div>
+      </div>
+    </div>
+
+    <div class="container-dia-semana">
+      <a href="tarefa-sexta.html" class="dia-semana-link">
+        <div class="dia-semana">SEXTA-FEIRA</div>
+      </a>
+      <div class="container-progresso">
+        <div class="barra-progresso" id="barra-sexta">0%</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    Gestão de Tempo 2025 Todos os Direitos Reservados
+  </footer>
+
+  <script>
+    function atualizarProgresso() {
+      const dias = ['segunda', 'terca', 'quarta', 'quinta', 'sexta'];
+      dias.forEach(dia => {
+        const progresso = localStorage.getItem(`progresso${dia.charAt(0).toUpperCase() + dia.slice(1)}`) || '0';
+        const barra = document.getElementById(`barra-${dia}`);
+        if (barra) {
+          barra.style.width = progresso + '%';
+          barra.textContent = progresso + '%';
+        }
+      });
+    }
+    window.addEventListener('DOMContentLoaded', atualizarProgresso);
+  </script>
+</body>
+</html>

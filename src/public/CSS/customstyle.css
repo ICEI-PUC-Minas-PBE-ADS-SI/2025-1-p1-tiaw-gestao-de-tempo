@@ -1,0 +1,67 @@
+body{
+    margin-left: 220px;
+    margin-right: 0px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+/*FERRAMENTAS*/ /**/
+.instsans{
+    font-family: "Instrument Sans";
+}
+
+
+
+
+.winphrase{
+    font-family: "Instrument Sans";
+    font-size: 110px;
+    margin-top: 100px;margin-bottom: 0px;
+    width: 60%
+}
+.description{
+    font-size: 20px;
+    width: 50%;
+    box-shadow: 2px 2px 5px;
+    border-radius: 25px;
+    padding-left: 30px;padding-right: 20px;
+    margin-top: 0px;
+}
+.dropdown{
+    cursor: pointer;
+    width: 500px;
+}
+.dropdown p{
+    margin-left: 10px;margin-right: 10px;
+}
+.dropdownCONTENT{
+    display: none;
+    position: absolute;
+    background-color: lightblue;
+}
+.dropdown:hover .dropdownCONTENT{
+    display: block;
+
+}
+.dropdownBOX{
+    box-shadow: 2px 2px 5px;
+    border-radius: 25px;
+}
+.console{
+    box-shadow: 2px 2px 5px;
+    height: 600px; width: 40%;
+    display: flex;
+    justify-content: center;align-items: center;
+    float: right;
+}
+.consoleHIDDEN{
+    box-shadow: 2px 2px 5px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 250px;
+}
+.console:hover .consoleHIDDEN{
+    display: block;
+}

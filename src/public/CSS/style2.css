@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(to right, purple, steelblue);
+}
+
+main{
+    margin-top: 10%;
+}
+
+.personaagem img {
+    border-radius: 100%;
+    width: 100%;
+}
+
+.personaagem {
+    width: 100px;
+}
+
+.buttons button  {
+    background-color: steelblue;
+    border: 1px solid;
+    width: 550px;
+    border-radius: 15px;
+    outline: none;
+    padding: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
+select {
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    border: 1px solid #888;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+select:focus {
+    border-color: steelblue;
+    box-shadow: 0 0 5px steelblue;
+    background-color: #e0e0e0;
+    color: black;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.personaagem:hover{
+    transform: scale(1.1);
+}

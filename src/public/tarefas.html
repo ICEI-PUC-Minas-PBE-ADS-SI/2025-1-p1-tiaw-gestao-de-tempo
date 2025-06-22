@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <title>Planejamento Semanal - Criar Tarefas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/tarefas.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <header class="orange-gradient text-white py-6 shadow-lg">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold text-center flex items-center justify-center gap-3">
+        <i class="fas fa-calendar-week"></i>
+        Planejamento Semanal
+      </h1>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-6" id="week-container">
+      
+      <!-- Domingo -->
+      <section class="day-column-bg rounded-2xl shadow-lg card-hover border border-gray-200" id="dom-column">
+        <div class="orange-gradient text-white font-bold p-4 text-center rounded-t-2xl">
+          <i class="fas fa-sun mr-2"></i>
+          DOMINGO
+        </div>
+        <div class="p-6">
+          <div id="dom-tasks" class="mb-6 max-h-64 overflow-y-auto scrollbar-thin space-y-3"></div>
+          <div class="space-y-4">
+            <input type="text" id="dom-task" placeholder="Nome da tarefa" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            
+            <!-- Área de horários atualizada -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Início</label>
+                <input type="time" id="dom-start" value="10:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Fim</label>
+                <input type="time" id="dom-end" value="11:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+            </div>
+            
+            <div class="flex items-center justify-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700">Necessário?</span>
+              <input type="checkbox" id="dom-necessary" class="w-5 h-5 text-blue-600 rounded">
+            </div>
+            <input type="text" id="dom-obs" placeholder="Observações" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            <button onclick="addTask('dom')" class="w-full btn-primary text-white font-semibold py-3 rounded-lg">
+              <i class="fas fa-plus mr-2"></i>Adicionar Tarefa
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Segunda -->
+      <section class="day-column-bg rounded-2xl shadow-lg card-hover border border-gray-200" id="seg-column">
+        <div class="orange-gradient text-white font-bold p-4 text-center rounded-t-2xl">
+          <i class="fas fa-briefcase mr-2"></i>
+          SEGUNDA
+        </div>
+        <div class="p-6">
+          <div id="seg-tasks" class="mb-6 max-h-64 overflow-y-auto scrollbar-thin space-y-3"></div>
+          <div class="space-y-4">
+            <input type="text" id="seg-task" placeholder="Nome da tarefa" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            
+            <!-- Área de horários atualizada -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Início</label>
+                <input type="time" id="seg-start" value="10:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Fim</label>
+                <input type="time" id="seg-end" value="11:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+            </div>
+            
+            <div class="flex items-center justify-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700">Necessário?</span>
+              <input type="checkbox" id="seg-necessary" class="w-5 h-5 text-blue-600 rounded">
+            </div>
+            <input type="text" id="seg-obs" placeholder="Observações" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            <button onclick="addTask('seg')" class="w-full btn-primary text-white font-semibold py-3 rounded-lg">
+              <i class="fas fa-plus mr-2"></i>Adicionar Tarefa
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Terça -->
+      <section class="day-column-bg rounded-2xl shadow-lg card-hover border border-gray-200" id="ter-column">
+        <div class="orange-gradient text-white font-bold p-4 text-center rounded-t-2xl">
+          <i class="fas fa-calendar-day mr-2"></i>
+          TERÇA
+        </div>
+        <div class="p-6">
+          <div id="ter-tasks" class="mb-6 max-h-64 overflow-y-auto scrollbar-thin space-y-3"></div>
+          <div class="space-y-4">
+            <input type="text" id="ter-task" placeholder="Nome da tarefa" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            
+            <!-- Área de horários atualizada -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Início</label>
+                <input type="time" id="ter-start" value="10:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Fim</label>
+                <input type="time" id="ter-end" value="11:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+            </div>
+            
+            <div class="flex items-center justify-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700">Necessário?</span>
+              <input type="checkbox" id="ter-necessary" class="w-5 h-5 text-blue-600 rounded">
+            </div>
+            <input type="text" id="ter-obs" placeholder="Observações" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            <button onclick="addTask('ter')" class="w-full btn-primary text-white font-semibold py-3 rounded-lg">
+              <i class="fas fa-plus mr-2"></i>Adicionar Tarefa
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quarta -->
+      <section class="day-column-bg rounded-2xl shadow-lg card-hover border border-gray-200" id="qua-column">
+        <div class="orange-gradient text-white font-bold p-4 text-center rounded-t-2xl">
+          <i class="fas fa-clock mr-2"></i>
+          QUARTA
+        </div>
+        <div class="p-6">
+          <div id="qua-tasks" class="mb-6 max-h-64 overflow-y-auto scrollbar-thin space-y-3"></div>
+          <div class="space-y-4">
+            <input type="text" id="qua-task" placeholder="Nome da tarefa" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            
+            <!-- Área de horários atualizada -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Início</label>
+                <input type="time" id="qua-start" value="10:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Fim</label>
+                <input type="time" id="qua-end" value="11:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+            </div>
+            
+            <div class="flex items-center justify-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700">Necessário?</span>
+              <input type="checkbox" id="qua-necessary" class="w-5 h-5 text-blue-600 rounded">
+            </div>
+            <input type="text" id="qua-obs" placeholder="Observações" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            <button onclick="addTask('qua')" class="w-full btn-primary text-white font-semibold py-3 rounded-lg">
+              <i class="fas fa-plus mr-2"></i>Adicionar Tarefa
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quinta -->
+      <section class="day-column-bg rounded-2xl shadow-lg card-hover border border-gray-200" id="qui-column">
+        <div class="orange-gradient text-white font-bold p-4 text-center rounded-t-2xl">
+          <i class="fas fa-tasks mr-2"></i>
+          QUINTA
+        </div>
+        <div class="p-6">
+          <div id="qui-tasks" class="mb-6 max-h-64 overflow-y-auto scrollbar-thin space-y-3"></div>
+          <div class="space-y-4">
+            <input type="text" id="qui-task" placeholder="Nome da tarefa" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            
+            <!-- Área de horários atualizada -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Início</label>
+                <input type="time" id="qui-start" value="10:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Fim</label>
+                <input type="time" id="qui-end" value="11:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+            </div>
+            
+            <div class="flex items-center justify-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700">Necessário?</span>
+              <input type="checkbox" id="qui-necessary" class="w-5 h-5 text-blue-600 rounded">
+            </div>
+            <input type="text" id="qui-obs" placeholder="Observações" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            <button onclick="addTask('qui')" class="w-full btn-primary text-white font-semibold py-3 rounded-lg">
+              <i class="fas fa-plus mr-2"></i>Adicionar Tarefa
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sexta -->
+      <section class="day-column-bg rounded-2xl shadow-lg card-hover border border-gray-200" id="sex-column">
+        <div class="orange-gradient text-white font-bold p-4 text-center rounded-t-2xl">
+          <i class="fas fa-star mr-2"></i>
+          SEXTA
+        </div>
+        <div class="p-6">
+          <div id="sex-tasks" class="mb-6 max-h-64 overflow-y-auto scrollbar-thin space-y-3"></div>
+          <div class="space-y-4">
+            <input type="text" id="sex-task" placeholder="Nome da tarefa" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            
+            <!-- Área de horários atualizada -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Início</label>
+                <input type="time" id="sex-start" value="10:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Fim</label>
+                <input type="time" id="sex-end" value="11:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+            </div>
+            
+            <div class="flex items-center justify-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700">Necessário?</span>
+              <input type="checkbox" id="sex-necessary" class="w-5 h-5 text-blue-600 rounded">
+            </div>
+            <input type="text" id="sex-obs" placeholder="Observações" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            <button onclick="addTask('sex')" class="w-full btn-primary text-white font-semibold py-3 rounded-lg">
+              <i class="fas fa-plus mr-2"></i>Adicionar Tarefa
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sábado -->
+      <section class="day-column-bg rounded-2xl shadow-lg card-hover border border-gray-200" id="sab-column">
+        <div class="orange-gradient text-white font-bold p-4 text-center rounded-t-2xl">
+          <i class="fas fa-gamepad mr-2"></i>
+          SÁBADO
+        </div>
+        <div class="p-6">
+          <div id="sab-tasks" class="mb-6 max-h-64 overflow-y-auto scrollbar-thin space-y-3"></div>
+          <div class="space-y-4">
+            <input type="text" id="sab-task" placeholder="Nome da tarefa" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            
+            <!-- Área de horários atualizada -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Início</label>
+                <input type="time" id="sab-start" value="10:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-600 mb-1">Fim</label>
+                <input type="time" id="sab-end" value="11:00" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg input-focus text-sm">
+              </div>
+            </div>
+            
+            <div class="flex items-center justify-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700">Necessário?</span>
+              <input type="checkbox" id="sab-necessary" class="w-5 h-5 text-blue-600 rounded">
+            </div>
+            <input type="text" id="sab-obs" placeholder="Observações" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus text-sm">
+            <button onclick="addTask('sab')" class="w-full btn-primary text-white font-semibold py-3 rounded-lg">
+              <i class="fas fa-plus mr-2"></i>Adicionar Tarefa
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Botão flutuante de salvar -->
+    <button class="fixed bottom-8 right-8 save-btn text-white font-bold py-4 px-6 rounded-2xl shadow-2xl z-50" onclick="salvarTarefas()">
+      <i class="fas fa-save mr-2"></i>
+      Salvar!
+    </button>
+  </main>
+
+  <script src="JS/tarefas.js"></script>
+</body>
+</html>

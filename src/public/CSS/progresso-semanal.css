@@ -1,0 +1,90 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(128, 128, 128, 0.418);
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 700px;
+  margin: 40px auto 40px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.titulo-principal {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2f4f2f;
+}
+
+.container-dia-semana {
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+
+.dia-semana-link {
+  text-decoration: none;
+  display: block;
+  color: white;
+  width: 100%;
+}
+
+.dia-semana-link:hover .dia-semana {
+  background-color: #2e7d32;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dia-semana {
+  background-color: gray;
+  border-radius: 20px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.container-progresso {
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 25px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin: 10px 0 30px 0;
+}
+
+.barra-progresso {
+  width: 0%;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 25px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.3s ease;
+}
+
+.footer {
+  background-color: #6ca36479;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #2f4f2f;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 20px auto 40px auto;
+}

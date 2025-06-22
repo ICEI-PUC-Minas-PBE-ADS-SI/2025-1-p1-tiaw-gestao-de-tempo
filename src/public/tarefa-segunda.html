@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarefas - Segunda-feira</title>
+  <link rel="stylesheet" href="CSS/diasemana.css" />
+  <script>
+    function salvarProgresso(valor) {
+      localStorage.setItem('progressoSegunda', valor);
+    }
+
+    function atualizarBarra() {
+      const progresso = document.getElementById('progressoInput').value;
+      salvarProgresso(progresso);
+      document.querySelector('.barra-progresso').style.width = progresso + '%';
+      document.querySelector('.barra-progresso').textContent = progresso + '%';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const progressoSalvo = localStorage.getItem('progressoSegunda') || '0';
+      document.getElementById('progressoInput').value = progressoSalvo;
+      atualizarBarra();
+    });
+  </script>
+</head>
+
+<body>
+  <main>
+    <div class="container-progresso">
+      <div class="barra-progresso">0%</div>
+    </div>
+    <div class="dia-semana-container">
+      <div class="dia-semana">
+        <h1>SEGUNDA-FEIRA</h1>
+      </div>
+    </div>
+    <div class="container-tarefas">
+      <div class="tarefas">
+        <div class="titulo-tarefa">
+          <div>
+            <p id="tarefa"></p>
+            <script>
+              const tarefaContainer = document.getElementById('tarefa');
+
+              fetch("http://localhost:3000/tarefa")
+                .then(res => res.json())
+                .then(data => {
+                  if (data.length === 0) {
+                    tarefaContainer.innerHTML = "<p>Nenhuma tarefa encontrada.</p>";
+                    return;
+                  }
+
+                  // Monta a lista de tarefas
+                  const html = data.map(tarefa => `
+        <div style="margin-bottom: 10px; padding: 10px; border: 1px solid #ccc;">
+          <b>${tarefa.nome}</b>
+        </div>
+      `).join("");
+
+                  tarefaContainer.innerHTML = html;
+                })
+                .catch(err => {
+                  console.error("Erro ao carregar tarefas:", err);
+                  tarefaContainer.innerHTML = "<p>Erro ao carregar tarefas.</p>";
+                });
+            </script>
+
+          </div>
+          <div class="tempo-tarefa">
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              14:00 - 16:00
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="progresso-tarefa">
+        <h4>Tarefa em andamento<br><br>Tempo restante: 30min</h4>
+      </div>
+    </div>
+
+    <div style="margin: 30px 40px;">
+      <label for="progressoInput">Atualizar progresso (%)</label><br />
+      <input id="progressoInput" type="number" min="0" max="100" step="10" onchange="atualizarBarra()" />
+    </div>
+
+    <div class="botoes">
+      <div class="botao-anterior" onclick="window.history.back()">
+        <p class="anterior">Voltar</p>
+      </div>
+      <div class="botao-proximo" onclick="window.location.href='tarefa-terca.html'">
+        <p class="proximo">Próximo</p>
+      </div>
+    </div>
+    <footer class="footer">
+      Gestão de Tempo 2025 Todos os Direitos Reservados
+    </footer>
+  </main>
+</body>
+
+</html>

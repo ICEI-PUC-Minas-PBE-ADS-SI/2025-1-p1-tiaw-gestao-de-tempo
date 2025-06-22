@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CSS/console.css">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronos Console</title>
+</head>
+<body>
+   <h1 class="instsans">NOVA TAREFA</h1>
+    <div class="container">
+    <!--ELEMENTO1-->
+   <div class="dropdownForm">
+    <p class="dropdownTitle">Selecione o formato</p>
+    
+    <p onclick="fun1()" class="formItem hide" style="top: 40px;" >Tempo(horas)</p>
+    
+   </div>
+
+   <!--ELEMENTO 2-->
+   <div class="dropdownForm">
+    <p class="dropdownTitle" >Selecione a cor</p>
+    
+    <p onclick="fun4()" class="formItem hide" style="top: 40px;" >Azul</p>
+    <p onclick="fun5()" class="formItem hide" style="top: 80px;" >Vermelho</p>
+    <p onclick="fun6()" class="formItem hide" style="top: 120px;">Verde</p>
+   </div>
+
+   <!--ELEMENTO 3-->
+   <div class="dropdownForm">
+    <p class="dropdownTitle">Selecione a recompensa</p>
+    
+    <p onclick="fun7()" class="formItem hide" style="top: 40px;" >Likes</p>
+    <p onclick="fun8()" class="formItem hide" style="top: 80px;" >$$$$$$</p>
+    <p onclick="fun9()" class="formItem hide" style="top: 120px;">Customizar</p>
+   </div>
+    </div>
+   
+
+    <!--SLOT 1-->
+    <div id="consoleBoard1" class="consoleBoard">
+
+    </div>
+    <!--SLOT 2-->
+    <div id="consoleBoard2" class="consoleBoard">
+
+    </div>
+     <!--SLOT 3-->
+    <div id="consoleBoard3" class="consoleBoard">
+
+    </div>
+
+    <div onclick="pitucha()" class="enviar"><h1><i class="fa-solid fa-angle-left"></i>ENVIAR!<i class="fa-solid fa-angle-right"></i></h1>
+    <div id="workinprogress" class="hide">WORK IN PROGRESS! Console apenas funcional após a integração dos servidores.</div>
+    </div>
+    
+<script>
+    function pitucha(){
+        document.getElementById("workinprogress").classList.remove("hide")
+    }
+
+    function fun1(){
+
+
+        document.getElementById("consoleBoard1").innerHTML=""
+        document.getElementById("consoleBoard1").innerHTML="<p class='mg10 txtcen'>Tempo em horas<p><input id='indexTempo' type='text'>"
+        
+    }
+
+
+    function fun4(){
+        document.getElementById("consoleBoard2").innerHTML=""
+
+        document.getElementById("consoleBoard2").innerHTML="<div style='background-color: lightblue;width: 40px;height: 40px'></div>"
+
+
+    }
+    function fun5(){
+        document.getElementById("consoleBoard2").innerHTML=""
+
+        document.getElementById("consoleBoard2").innerHTML="<div style='background-color: tomato;width: 40px;height: 40px'></div>"
+
+
+    }
+    function fun6(){
+        document.getElementById("consoleBoard2").innerHTML=""
+
+        document.getElementById("consoleBoard2").innerHTML="<div style='background-color: lightgreen;width: 40px;height: 40px'></div>"
+
+
+    }
+
+
+    function fun7(){
+        document.getElementById("consoleBoard3").innerHTML=""
+
+        document.getElementById("consoleBoard3").innerHTML="<h2 class='mg10 txtcen'>LIKES</h2>"
+
+
+    }
+    function fun8(){
+        document.getElementById("consoleBoard3").innerHTML=""
+
+        document.getElementById("consoleBoard3").innerHTML="<h2 class='mg10'>$$$$$</h2>"
+
+
+    }
+    function fun9(){
+        document.getElementById("consoleBoard3").innerHTML=""
+
+        document.getElementById("consoleBoard3").innerHTML="<p class='mg10 txtcen'>Recompensa personalizada<p><input class='mg10' id='indexTempo' type='text'>"
+
+
+    }
+    
+
+        
+</script>
+</body>
+</html>

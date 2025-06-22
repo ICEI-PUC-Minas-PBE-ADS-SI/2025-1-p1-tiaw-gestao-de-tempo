@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style2.css">
+    <script src="JS/app.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="cabecalho">
+            <div class="personaagem"><img src="imagens/relogio(mascote) (2).png" onclick="volta()"></div>
+        </div>
+    </header>
+
+    <main>
+    <center>
+        <main>
+    <center>
+        <div class="buttons">
+            <h2>Modo de Fundo</h2>
+            <select id="fundoSelect" onchange="setFundo(this.value)">
+                <option value="">Selecione</option>
+                <option value="claro">Claro</option>
+                <option value="escuro">Escuro</option>
+            </select>
+
+            <br><br><h2>Cor Principal</h2>
+            <select id="corSelect" onchange="setCorPrincipal(this.value)">
+                <option value="">Selecione</option>
+                <option value="steelblue">Azul</option>
+                <option value="purple">Roxo</option>
+                <option value="green">Verde</option>
+                <option value="black">Preto</option>
+            </select>
+
+            <br><br><h2>Outras Opções</h2>
+            <button onclick="editarPerfil()">Perfil</button><br><br>
+            <button onclick="editarDadosConta()">Dados da Conta</button><br><br>
+            <button onclick="restaurarPadrao()">Restaurar Padrão</button>
+        </div>
+    </center>
+</main>
+    </center>
+</main>
+</body>
+
+</html>

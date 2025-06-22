@@ -1,12 +1,12 @@
 # Nome do projeto
 
-`CURSO: Coloque o nome do curso aqui, sem abreviações`
+`CURSO: Sistemas de Informação`
 
 `DISCIPLINA: Trabalho Interdisciplinar Aplicações Web`
 
-`Xº semestre/ANO`
+`1º semestre/2025`
 
-Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
+O objetivo do website Cronos, é auxiliar jovens estudantes e trabalhadores a administrarem seu tempo de forma correta, trazendo uma metodologia de entreterimento e diversão para transformar essa tarefa mais leve e facil.
 
 ## Integrantes
 
@@ -14,8 +14,8 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 * Miguel Campos Soares Querino 
 * Rafael Araujo Pereira
 * Christian Augusto Soares Diniz
-* Thaís Paula Miranda
-* Nome completo do aluno 6
+* Eduardo Nobre de Oliveira Lino
+* Thulio Hiroshi Fernandes Funayama
 
 ## Professor
 
