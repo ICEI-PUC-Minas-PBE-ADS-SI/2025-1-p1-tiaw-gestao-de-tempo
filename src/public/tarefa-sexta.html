@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tarefas - Sexta-feira</title>
+  <title>Tarefas - Sexta</title>
   <link rel="stylesheet" href="CSS/diasemana.css" />
   <script>
-    // Exemplo de salvar progresso localmente
     function salvarProgresso(valor) {
-      localStorage.setItem('progressoSexta', valor);
+      localStorage.setItem('progressoSegunda', valor);
     }
 
     function atualizarBarra() {
@@ -19,12 +19,13 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      const progressoSalvo = localStorage.getItem('progressoSexta') || '0';
+      const progressoSalvo = localStorage.getItem('progressoSegunda') || '0';
       document.getElementById('progressoInput').value = progressoSalvo;
       atualizarBarra();
     });
   </script>
 </head>
+
 <body>
   <main>
     <div class="container-progresso">
@@ -32,28 +33,81 @@
     </div>
     <div class="dia-semana-container">
       <div class="dia-semana">
-        <h1>SEXTA-FEIRA</h1>
+        <h1>SEXTA</h1>
       </div>
     </div>
     <div class="container-tarefas">
       <div class="tarefas">
         <div class="titulo-tarefa">
           <div>
-            <p>Treino - Peito</p>
+            <p id="tarefa"></p>
+            <script>
+              const tarefaContainer = document.getElementById('tarefa');
+
+              fetch("http://localhost:3000/tarefa/6")
+                .then(res => res.json())
+                .then(tarefa => {
+                  tarefaContainer.innerHTML = `<b>${tarefa.nome}</b>`;
+                })
+                .catch(err => {
+                  console.error("Erro ao carregar tarefa:", err);
+                  tarefaContainer.innerHTML = "<p>Erro ao carregar tarefa.</p>";
+                });
+
+            </script>
+
           </div>
           <div class="tempo-tarefa">
             <span>
-              <i class="fa-regular fa-clock"></i> 
-              14:00 - 16:00
+              <i class="fa-regular fa-clock"></i>
+              <span id="tempo">
+                <script>
+                  const tempocontainer = document.getElementById('tempo');
+
+                  fetch("http://localhost:3000/tarefa/6")
+                    .then(res => res.json())
+                    .then(tarefa => {
+                      tempocontainer.innerHTML = `${tarefa.inicio} - ${tarefa.fim}`;
+                    })
+                    .catch(err => {
+                      console.error("Erro ao carregar tarefa:", err);
+                      tempocontainer.innerHTML = "<p>Erro ao carregar tarefa.</p>";
+                    });
+                </script>
+              </span>
             </span>
           </div>
         </div>
       </div>
       <div class="progresso-tarefa">
-        <h4>Tarefa em andamento<br><br>Tempo restante: 30min</h4>
+        <h4>Tarefa em andamento<br><br><span id="temporestante">
+            <script>
+              const temporestante = document.getElementById('temporestante');
+
+              function horaParaMinutos(hora) {
+                const [h, m] = hora.split(":").map(Number);
+                return h * 60 + m;
+              }
+
+              fetch("http://localhost:3000/tarefa/6")
+                .then(res => res.json())
+                .then(tarefa => {
+                  const inicioMin = horaParaMinutos(tarefa.inicio);
+                  const fimMin = horaParaMinutos(tarefa.fim);
+                  const duracao = fimMin - inicioMin;
+
+                  temporestante.innerHTML = `Tempo Restante: ${duracao} minutos`;
+                })
+                .catch(err => {
+                  console.error("Erro ao carregar tarefa:", err);
+                  temporestante.innerHTML = "<p>Erro ao carregar tarefa.</p>";
+                });
+
+            </script>
+          </span></h4>
       </div>
     </div>
-    
+
     <div style="margin: 30px 40px;">
       <label for="progressoInput">Atualizar progresso (%)</label><br />
       <input id="progressoInput" type="number" min="0" max="100" step="10" onchange="atualizarBarra()" />
@@ -63,7 +117,7 @@
       <div class="botao-anterior" onclick="window.history.back()">
         <p class="anterior">Voltar</p>
       </div>
-      <div class="botao-proximo" onclick="window.location.href='progresso-semanal.html'">
+      <div class="botao-proximo" onclick="window.location.href='tarefa-sabado.html'">
         <p class="proximo">Próximo</p>
       </div>
     </div>
@@ -72,4 +126,5 @@
     </footer>
   </main>
 </body>
+
 </html>

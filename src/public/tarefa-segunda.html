@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tarefas - Segunda-feira</title>
+  <title>Tarefas - Segunda</title>
   <link rel="stylesheet" href="CSS/diasemana.css" />
   <script>
     function salvarProgresso(valor) {
@@ -33,7 +33,7 @@
     </div>
     <div class="dia-semana-container">
       <div class="dia-semana">
-        <h1>SEGUNDA-FEIRA</h1>
+        <h1>SEGUNDA</h1>
       </div>
     </div>
     <div class="container-tarefas">
@@ -44,40 +44,67 @@
             <script>
               const tarefaContainer = document.getElementById('tarefa');
 
-              fetch("http://localhost:3000/tarefa")
+              fetch("http://localhost:3000/tarefa/2")
                 .then(res => res.json())
-                .then(data => {
-                  if (data.length === 0) {
-                    tarefaContainer.innerHTML = "<p>Nenhuma tarefa encontrada.</p>";
-                    return;
-                  }
-
-                  // Monta a lista de tarefas
-                  const html = data.map(tarefa => `
-        <div style="margin-bottom: 10px; padding: 10px; border: 1px solid #ccc;">
-          <b>${tarefa.nome}</b>
-        </div>
-      `).join("");
-
-                  tarefaContainer.innerHTML = html;
+                .then(tarefa => {
+                  tarefaContainer.innerHTML = `<b>${tarefa.nome}</b>`;
                 })
                 .catch(err => {
-                  console.error("Erro ao carregar tarefas:", err);
-                  tarefaContainer.innerHTML = "<p>Erro ao carregar tarefas.</p>";
+                  console.error("Erro ao carregar tarefa:", err);
+                  tarefaContainer.innerHTML = "<p>Erro ao carregar tarefa.</p>";
                 });
+
             </script>
 
           </div>
           <div class="tempo-tarefa">
             <span>
               <i class="fa-regular fa-clock"></i>
-              14:00 - 16:00
+              <span id="tempo">
+                <script>
+                  const tempocontainer = document.getElementById('tempo');
+
+                  fetch("http://localhost:3000/tarefa/2")
+                    .then(res => res.json())
+                    .then(tarefa => {
+                      tempocontainer.innerHTML = `${tarefa.inicio} - ${tarefa.fim}`;
+                    })
+                    .catch(err => {
+                      console.error("Erro ao carregar tarefa:", err);
+                      tempocontainer.innerHTML = "<p>Erro ao carregar tarefa.</p>";
+                    });
+                </script>
+              </span>
             </span>
           </div>
         </div>
       </div>
       <div class="progresso-tarefa">
-        <h4>Tarefa em andamento<br><br>Tempo restante: 30min</h4>
+        <h4>Tarefa em andamento<br><br><span id="temporestante">
+            <script>
+              const temporestante = document.getElementById('temporestante');
+
+              function horaParaMinutos(hora) {
+                const [h, m] = hora.split(":").map(Number);
+                return h * 60 + m;
+              }
+
+              fetch("http://localhost:3000/tarefa/2")
+                .then(res => res.json())
+                .then(tarefa => {
+                  const inicioMin = horaParaMinutos(tarefa.inicio);
+                  const fimMin = horaParaMinutos(tarefa.fim);
+                  const duracao = fimMin - inicioMin;
+
+                  temporestante.innerHTML = `Tempo Restante: ${duracao} minutos`;
+                })
+                .catch(err => {
+                  console.error("Erro ao carregar tarefa:", err);
+                  temporestante.innerHTML = "<p>Erro ao carregar tarefa.</p>";
+                });
+
+            </script>
+          </span></h4>
       </div>
     </div>
 

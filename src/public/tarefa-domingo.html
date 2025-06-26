@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tarefas - Terça</title>
+  <title>Tarefas - Domingo</title>
   <link rel="stylesheet" href="CSS/diasemana.css" />
   <script>
     function salvarProgresso(valor) {
@@ -33,7 +33,7 @@
     </div>
     <div class="dia-semana-container">
       <div class="dia-semana">
-        <h1>TERÇA</h1>
+        <h1>DOMINGO</h1>
       </div>
     </div>
     <div class="container-tarefas">
@@ -44,7 +44,7 @@
             <script>
               const tarefaContainer = document.getElementById('tarefa');
 
-              fetch("http://localhost:3000/tarefa/3")
+              fetch("http://localhost:3000/tarefa/1")
                 .then(res => res.json())
                 .then(tarefa => {
                   tarefaContainer.innerHTML = `<b>${tarefa.nome}</b>`;
@@ -64,7 +64,7 @@
                 <script>
                   const tempocontainer = document.getElementById('tempo');
 
-                  fetch("http://localhost:3000/tarefa/3")
+                  fetch("http://localhost:3000/tarefa/1")
                     .then(res => res.json())
                     .then(tarefa => {
                       tempocontainer.innerHTML = `${tarefa.inicio} - ${tarefa.fim}`;
@@ -89,7 +89,7 @@
                 return h * 60 + m;
               }
 
-              fetch("http://localhost:3000/tarefa/3")
+              fetch("http://localhost:3000/tarefa/1")
                 .then(res => res.json())
                 .then(tarefa => {
                   const inicioMin = horaParaMinutos(tarefa.inicio);
@@ -117,7 +117,7 @@
       <div class="botao-anterior" onclick="window.history.back()">
         <p class="anterior">Voltar</p>
       </div>
-      <div class="botao-proximo" onclick="window.location.href='tarefa-quarta.html'">
+      <div class="botao-proximo" onclick="window.location.href='tarefa-segunda.html'">
         <p class="proximo">Próximo</p>
       </div>
     </div>
