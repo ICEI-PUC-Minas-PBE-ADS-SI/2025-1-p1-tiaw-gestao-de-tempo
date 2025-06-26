@@ -17,7 +17,7 @@
         <!--BOX 1-->
         <div class="item item1">
             <i class="fa-solid fa-star inneritem inner" style="color: #FFD43B;"></i>
-            <p class="inneritem title">1000</p>
+            <p id="b1st" class="inneritem title">1000</p>
             <p id="b1t1" class="inneritem tasks task1"></p>
             <p id="b1t2" class="inneritem tasks task2"></p>
             <p id="b1t3" class="inneritem tasks task3"></p>
@@ -25,37 +25,38 @@
             <p id="b1r2" class="inneritem rewards reward2"></p>
             <p id="b1r3" class="inneritem rewards reward3"></p>
             <p class="inneritem line">_______________________________</p> 
-            <p id="b1q1" class="inneritem total">TOTAL: PC 3000</p>
+            <p id="b1q1" class="inneritem total"></p>
         </div>
 
         <!--BOX 2-->
         <div class="item item2">
             <i class="fa-solid fa-star inneritem inner" style="color: #FFD43B;"></i>
-            <p class="inneritem title">1000</p>
-            <p id="b2t1" class="inneritem tasks task1">Tarefa x</p>
-            <p id="b2t2" class="inneritem tasks task2">Tarefa y</p>
-            <p id="b2t3" class="inneritem tasks task3">Tarefa z</p>
-            <p id="b2r1" class="inneritem rewards reward1">PC 1000</p>
-            <p id="b2r2" class="inneritem rewards reward2">PC 1000</p>
-            <p id="b2r3" class="inneritem rewards reward3">PC 1000</p>
+            <p id="b2st" class="inneritem title">1000</p>
+            <p id="b2t1" class="inneritem tasks task1"></p>
+            <p id="b2t2" class="inneritem tasks task2"></p>
+            <p id="b2t3" class="inneritem tasks task3"></p>
+            <p id="b2r1" class="inneritem rewards reward1"></p>
+            <p id="b2r2" class="inneritem rewards reward2"></p>
+            <p id="b2r3" class="inneritem rewards reward3"></p>
             <p class="inneritem line">_______________________________</p> 
-            <p id="b2q1" class="inneritem total">TOTAL: PC 3000</p>
+            <p id="b2q1" class="inneritem total"></p>
         </div>
     
         <!--BOX 3-->
         <div class="item item3">
             <i class="fa-solid fa-star inneritem inner" style="color: #FFD43B;"></i>
-            <p class="inneritem title">1000</p>
-            <p id="b3t1" class="inneritem tasks task1">Tarefa x</p>
-            <p id="b3t2" class="inneritem tasks task2">Tarefa y</p>
-            <p id="b3t3" class="inneritem tasks task3">Tarefa z</p>
-            <p id="b3r1" class="inneritem rewards reward1">PC 1000</p>
-            <p id="b3r2" class="inneritem rewards reward2">PC 1000</p>
-            <p id="b3r3" class="inneritem rewards reward3">PC 1000</p>
+            <p id="b3st" class="inneritem title">1000</p>
+            <p id="b3t1" class="inneritem tasks task1"></p>
+            <p id="b3t2" class="inneritem tasks task2"></p>
+            <p id="b3t3" class="inneritem tasks task3"></p>
+            <p id="b3r1" class="inneritem rewards reward1"></p>
+            <p id="b3r2" class="inneritem rewards reward2"></p>
+            <p id="b3r3" class="inneritem rewards reward3"></p>
             <p class="inneritem line">_______________________________</p> 
-            <p id="b3q1" class="inneritem total">TOTAL: PC 3000</p>
+            <p id="b3q1" class="inneritem total"></p>
         </div>
     </div>
+    <div class="redeem"><h1 onclick="coletar()"><i class="fa-solid fa-angle-left"></i>CLIQUE AQUI PARA COLETAR!<i class="fa-solid fa-angle-right"></i></h1></div>
     
 
 
@@ -65,54 +66,116 @@
 
     <script src="JS/dados.js"></script>
     <script>
-        //PESOS
-        //BOX1
-        PESO_HORAS_qnt1=(horasqnt1*10),
-        PESO_COMBO_qnt1=(comboqnt1*100),
-        PESO_tCONCLUIDA_qnt1=(t_concluidaqnt1*100),
-        PESO_ABSOLUTO_qnt1=(PESO_HORAS_qnt1+PESO_COMBO_qnt1+PESO_tCONCLUIDA_qnt1)
+        //COLETAR RECOMPENSAS:     PRECISA TERMINAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        function coletar(){
+            let obj = gebiTOTAL('b3q1','b2q1','b1q1')
 
-        //BOX2
-        PESO_HORAS_qnt2=(horasqnt2*10),
-        PESO_COMBO_qnt2=(comboqnt2*100),
-        PESO_tCONCLUIDA_qnt2=(t_concluidaqnt2*100),
-        PESO_ABSOLUTO_qnt2=(PESO_HORAS_qnt2+PESO_COMBO_qnt2+PESO_tCONCLUIDA_qnt2)
+            async function f1() {
+                try{
+                    data= await fetch('http://localhost:3000/')
+                    console.log(data)
+                }
+                catch{
 
-        //BOX3
-        PESO_HORAS_qnt3=(horasqnt3*10),
-        PESO_COMBO_qnt3=(comboqnt3*100),
-        PESO_tCONCLUIDA_qnt3=(t_concluidaqnt3*100),
-        PESO_ABSOLUTO_qnt3=(PESO_HORAS_qnt3+PESO_COMBO_qnt3+PESO_tCONCLUIDA_qnt3)
+                }
+            }
+
+        }
+
+
+
+        //CONVERTER VALORES:
+
+
+        //TESTES: CRIAR VALORES
+        function test(){
+            let box1={
+                tempo: 10, //TEMPO EM UNIDADE
+                default: 100, //RECOMPENSA PADRÃO POR COMPLETAR A TAREFA
+                combo: 1 //COMBO BONUS AO COMPLETAR VÁRIAS TAREFAS
+            }
+            let rodrigo={
+                tempo:10,
+                default:10,
+                combo:2
+            }
+            let box3={
+                tempo: 30,
+                default: 40,
+                combo: 35
+            }
+            localStorage.setItem('beta',JSON.stringify(rodrigo))
+            localStorage.setItem('charlie',JSON.stringify(box3))
+            localStorage.setItem('alpha', JSON.stringify(box1))
+        }
+        //TESTES: EXCLUIR VALORES
+        function rogerio(){
+           localStorage.clear()
+
+            
+            
+        }
+        //CONVERTER STRING(LOCAL STORAGE) PARA VARIÁVEIS
+        let alphaInput= localStorage.getItem('alpha')
+        let alphaOutput= JSON.parse(alphaInput)
+
+        let betaInput= localStorage.getItem('beta')
+        let betaOutput= JSON.parse(betaInput)
+
+        let charlieInput= localStorage.getItem('charlie')
+        let charlieOutput= JSON.parse(charlieInput)
+
 
         //----------------------------------
         //INTERFACES
+
         //BOX1
-        document.getElementById("b1t1").textContent=tasks[0].task1
-        document.getElementById("b1t2").textContent=tasks[0].task2
-        document.getElementById("b1t3").textContent=tasks[0].task3
-        document.getElementById("b1t3").textContent=tasks[0].task3
-        document.getElementById("b1r1").textContent="PC "+PESO_HORAS_qnt1
-        document.getElementById("b1r2").textContent="PC "+PESO_COMBO_qnt1
-        document.getElementById("b1r3").textContent="PC "+PESO_tCONCLUIDA_qnt1
-        document.getElementById("b1q1").textContent="PC "+PESO_ABSOLUTO_qnt1
+        //TAREFAS(NOMES):
+        gebiTXT('b1t1',tasks[0].TempoDecorrido.nome)
+        gebiTXT('b1t2',tasks[0].Desempenho.nome)
+        gebiTXT('b1t3',tasks[0].Default.nome)
+
+        //TAREFAS(RECOMPENSAS):
+        gebiTXT('b1r1',alphaOutput.tempo*tasks[0].TempoDecorrido.peso)
+        gebiTXT('b1r2',alphaOutput.default*tasks[0].Default.peso)
+        gebiTXT('b1r3',alphaOutput.combo*tasks[0].Desempenho.peso)
+
+
+        //TOTAL:
+        gebiTXT('b1q1','PC TOTAL '+ gebiTOTAL('b1r1','b1r2','b1r3'))
+        //----------------------------------
 
         //BOX2
-        document.getElementById("b2t1").textContent=tasks[0].task1
-        document.getElementById("b2t2").textContent=tasks[0].task2
-        document.getElementById("b2t3").textContent=tasks[0].task3
-        document.getElementById("b2r1").textContent="PC "+PESO_HORAS_qnt1
-        document.getElementById("b2r2").textContent="PC "+PESO_COMBO_qnt1
-        document.getElementById("b2r3").textContent="PC "+PESO_tCONCLUIDA_qnt1
-        document.getElementById("b2q1").textContent="PC "+PESO_ABSOLUTO_qnt1
-        
+        //TAREFAS(NOMES):
+        gebiTXT('b2t1',tasks[0].TempoDecorrido.nome)
+        gebiTXT('b2t2',tasks[0].Desempenho.nome)
+        gebiTXT('b2t3',tasks[0].Default.nome)
+
+        //TAREFAS(RECOMPENSAS):
+
+        gebiTXT('b2r1',betaOutput.tempo*tasks[0].TempoDecorrido.peso)
+        gebiTXT('b2r2',betaOutput.default*tasks[0].TempoDecorrido.peso)
+        gebiTXT('b2r3',betaOutput.combo*tasks[0].TempoDecorrido.peso)
+
+        //TOTAL:
+        gebiTXT('b2q1','PC TOTAL '+ gebiTOTAL('b2r1','b2r2','b2r3'))
+        //----------------------------------
+
         //BOX3
-        document.getElementById("b3t1").textContent=tasks[0].task1
-        document.getElementById("b3t2").textContent=tasks[0].task2
-        document.getElementById("b3t3").textContent=tasks[0].task3
-        document.getElementById("b3r1").textContent="PC "+PESO_HORAS_qnt1
-        document.getElementById("b3r2").textContent="PC "+PESO_COMBO_qnt1
-        document.getElementById("b3r3").textContent="PC "+PESO_tCONCLUIDA_qnt1
-        document.getElementById("b3q1").textContent="PC "+PESO_ABSOLUTO_qnt1
+        //TAREFAS(NOMES):
+        gebiTXT('b3t1',tasks[0].TempoDecorrido.nome)
+        gebiTXT('b3t2',tasks[0].Desempenho.nome)
+        gebiTXT('b3t3',tasks[0].Default.nome)
+
+        //TAREFAS(RECOMPENSAS):
+
+        gebiTXT('b3r1',charlieOutput.tempo*tasks[0].TempoDecorrido.peso)
+        gebiTXT('b3r2',charlieOutput.default*tasks[0].TempoDecorrido.peso)
+        gebiTXT('b3r3',charlieOutput.combo*tasks[0].TempoDecorrido.peso)
+
+        //TOTAL:
+        gebiTXT('b3q1','PC TOTAL '+ gebiTOTAL('b3r1','b3r2','b3r3'))
+        //----------------------------------
         
     </script>
 </body>

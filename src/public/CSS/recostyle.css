@@ -97,5 +97,10 @@ body{
     font-size: 21px;
 }
 
+.redeem{
+    position: absolute;
+    font-family: "Instrument Sans";
+    cursor: pointer;
+}
 
 
