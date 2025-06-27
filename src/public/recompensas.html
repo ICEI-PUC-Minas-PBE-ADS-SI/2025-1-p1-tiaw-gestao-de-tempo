@@ -56,29 +56,56 @@
             <p id="b3q1" class="inneritem total"></p>
         </div>
     </div>
-    <div class="redeem"><h1 onclick="coletar()"><i class="fa-solid fa-angle-left"></i>CLIQUE AQUI PARA COLETAR!<i class="fa-solid fa-angle-right"></i></h1></div>
-    
+    <button onclick="coletar()"><i class="fa-solid fa-angle-left"></i>CLIQUE PARA COLETAR!<i class="fa-solid fa-angle-right"></i></button>    
 
-
+    <button onclick="test()">1</button>
+    <button onclick="retrievePoints()">2</button>
 
 
     
 
     <script src="JS/dados.js"></script>
     <script>
-        //COLETAR RECOMPENSAS:     PRECISA TERMINAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        function coletar(){
-            let obj = gebiTOTAL('b3q1','b2q1','b1q1')
+        //FUNÇÃO PARA RECUPERAR OS PONTOS JÁ EXISTENTES
+        async function retrievePoints() {
+            try{
+                const response= await fetch('http://localhost:3000/recursos/1')
+                const data = await response.json()
+                const r = await data.pc
+                
+                let obj= +r + +localPC
+                f1(obj)
 
-            async function f1() {
-                try{
-                    data= await fetch('http://localhost:3000/')
-                    console.log(data)
-                }
-                catch{
-
-                }
             }
+            catch{}
+        }
+
+
+
+        //FUNÇÃO PARA LANÇAR OS PONTOS
+        async function f1(object){
+            try{
+
+                const res=  await fetch('http://localhost:3000/recursos/1',{
+                    method:'PUT',
+                    headers: {
+                        'Content-Type':'application/json'
+                    },
+                    body:JSON.stringify({
+                        'pc': object,
+                        id:1
+                    })
+                })      
+            }
+            catch{}
+        }
+        
+        //COLETAR RECOMPENSAS:
+        function coletar(){
+            //CONTAGEM DO TOTAL DE PONTOS
+
+            let obj = PC+ localPC
+            f1(obj)
 
         }
 
@@ -177,6 +204,9 @@
         gebiTXT('b3q1','PC TOTAL '+ gebiTOTAL('b3r1','b3r2','b3r3'))
         //----------------------------------
         
+
+
+    let localPC= gebiTOTAL('b1r1','b1r2','b1r3') + gebiTOTAL('b2r1','b2r2','b2r3')+ gebiTOTAL('b3r1','b3r2','b3r3') //     pontos locais
     </script>
 </body>
 </html>

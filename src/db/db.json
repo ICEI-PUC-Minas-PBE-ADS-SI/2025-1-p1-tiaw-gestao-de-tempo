@@ -1,9 +1,7 @@
 {
   "usuarios": [
     {
-      "nome": "Chris",
-      "user": "Daocu",
-      "senha": "123456",
+      "pc": 100,
       "id": 1
     },
     {
@@ -11,6 +9,12 @@
       "user": "User_1",
       "senha": "123456",
       "id": 2
+    }
+  ],
+  "recursos": [
+    {
+      "pc": 4660,
+      "id": 1
     }
   ],
   "tarefa": [
