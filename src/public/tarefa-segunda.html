@@ -7,6 +7,36 @@
   <title>Tarefas - Segunda</title>
   <link rel="stylesheet" href="CSS/diasemana.css" />
   <script>
+
+    //RELÓGIO
+    let secs= 0;            //variável de tempo(segundos)
+    let mins= 0;            //variável de tempo(minutos)
+    let hours= 0;           //variável de tempo(horas)
+    let timing;             //variável que receberá o timer
+
+    //função que atualiza o contador do relógio(ultilizado dentro do)
+    function clockup(){
+    secs++
+    if(secs>59){
+        secs= 0
+        mins++
+    }
+    if(mins>59){
+        mins=0
+        hours++
+    }
+    document.getElementById('clock').textContent= hours+':'+mins+':'+secs
+    }
+    //---------------------------------------------------------------
+    document.getElementById('but2').addEventListener('click',()=>{  //evento que começa o timer
+        timing= setInterval(clockup,1000)
+    })
+    document.getElementById('but1').addEventListener('click',()=>{  //evento que pausa o timer
+        clearInterval(timing)
+    })
+
+
+
     function salvarProgresso(valor) {
       localStorage.setItem('progressoSegunda', valor);
     }
@@ -111,7 +141,12 @@
     <div style="margin: 30px 40px;">
       <label for="progressoInput">Atualizar progresso (%)</label><br />
       <input id="progressoInput" type="number" min="0" max="100" step="10" onchange="atualizarBarra()" />
+      <div><p id="clock">0:0:0</p>
+      <button id="but2">RETOMAR</button>
+      <button id="but1">PAUSAR</button>
+      </div>
     </div>
+
 
     <div class="botoes">
       <div class="botao-anterior" onclick="window.history.back()">
