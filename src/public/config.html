@@ -11,6 +11,33 @@
 
 <body>
 
+    <style>
+        .modal {
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+
     <header>
         <div class="cabecalho">
             <div class="personaagem"><img src="imagens/relogio(mascote) (2).png" onclick="volta()"></div>
@@ -18,35 +45,57 @@
     </header>
 
     <main>
-    <center>
-        <main>
-    <center>
-        <div class="buttons">
-            <h2>Modo de Fundo</h2>
-            <select id="fundoSelect" onchange="setFundo(this.value)">
-                <option value="">Selecione</option>
-                <option value="claro">Claro</option>
-                <option value="escuro">Escuro</option>
-            </select>
+        <center>
+            <main>
+                <center>
+                    <div class="buttons">
+                        <h2>Modo de Fundo</h2>
+                        <select id="fundoSelect" onchange="setFundo(this.value)">
+                            <option value="">Selecione</option>
+                            <option value="claro">Claro</option>
+                            <option value="escuro">Escuro</option>
+                        </select>
 
-            <br><br><h2>Cor Principal</h2>
-            <select id="corSelect" onchange="setCorPrincipal(this.value)">
-                <option value="">Selecione</option>
-                <option value="steelblue">Azul</option>
-                <option value="purple">Roxo</option>
-                <option value="green">Verde</option>
-                <option value="black">Preto</option>
-            </select>
+                        <br><br>
+                        <h2>Cor Principal</h2>
+                        <select id="corSelect" onchange="setCorPrincipal(this.value)">
+                            <option value="">Selecione</option>
+                            <option value="steelblue">Azul</option>
+                            <option value="purple">Roxo</option>
+                            <option value="green">Verde</option>
+                            <option value="black">Preto</option>
+                        </select>
 
-            <br><br><h2>Outras Opções</h2>
-            <button onclick="editarPerfil()">Perfil</button><br><br>
-            <button onclick="editarDadosConta()">Dados da Conta</button><br><br>
-            <button onclick="restaurarPadrao()">Restaurar Padrão</button>
+                        <br><br>
+                        <h2>Outras Opções</h2>
+                        <button onclick="editarPerfil()">Edita Perfil</button><br><br>
+                        <button onclick="editarDadosConta()">Modificar Tarefa</button><br><br>
+                        <button onclick="restaurarPadrao()">Restaurar Padrão</button>
+                    </div>
+                </center>
+            </main>
+        </center>
+    </main>
+
+    <div id="modalPerfil" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModalPerfil()">&times;</span>
+            <h2>Editar Perfil</h2>
+            <form id="formPerfil">
+                <label for="nomePerfil">Nome:</label>
+                <input type="text" id="nomePerfil" name="nome" required><br><br>
+
+                <label for="userPerfil">Usuário:</label>
+                <input type="text" id="userPerfil" name="user" required><br><br>
+
+                <label for="senhaPerfil">Senha:</label>
+                <input type="password" id="senhaPerfil" name="senha" required><br><br>
+
+                <button type="submit">Salvar</button>
+            </form>
         </div>
-    </center>
-</main>
-    </center>
-</main>
+    </div>
+
 </body>
 
 </html>

@@ -55,11 +55,72 @@ function aplicarConfiguracoesSalvas() {
 }
 
 function editarPerfil() {
-    alert("Função de edição de perfil ainda será implementada.");
+    const idUsuarioAtual = sessionStorage.getItem("userId");
+
+    if (!idUsuarioAtual) {
+        alert("Você precisa estar logado para editar o perfil.");
+        window.location.href = "signin.html";
+        return;
+    }
+
+    fetch(`http://localhost:3000/usuarios/${idUsuarioAtual}`)
+        .then(res => res.json())
+        .then(usuario => {
+            document.getElementById("nomePerfil").value = usuario.nome || "";
+            document.getElementById("userPerfil").value = usuario.user || "";
+            document.getElementById("senhaPerfil").value = usuario.senha || "";
+
+            document.getElementById("modalPerfil").style.display = "block";
+        })
+        .catch(err => {
+            alert("Erro ao carregar perfil: " + err);
+        });
+
+        // Enviar PUT ao salvar alterações
+document.getElementById("formPerfil").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const idUsuarioAtual = sessionStorage.getItem("userId");
+  if (!idUsuarioAtual) {
+    alert("Você não está logado!");
+    window.location.href = "signin.html";
+    return;
+  }
+
+  const dadosAtualizados = {
+    nome: document.getElementById("nomePerfil").value,
+    user: document.getElementById("userPerfil").value,
+    senha: document.getElementById("senhaPerfil").value
+  };
+
+  try {
+    const resposta = await fetch(`http://localhost:3000/usuarios/${idUsuarioAtual}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dadosAtualizados)
+    });
+
+    if (!resposta.ok) throw new Error("Erro ao atualizar");
+
+    alert("Perfil atualizado com sucesso!");
+    fecharModalPerfil();
+  } catch (erro) {
+    alert("Erro ao salvar alterações: " + erro.message);
+  }
+});
 }
 
+
+
+function fecharModalPerfil() {
+    document.getElementById("modalPerfil").style.display = "none";
+}
+
+
 function editarDadosConta() {
-    alert("Função de edição dos dados da conta ainda será implementada.");
+    location.href = "tarefas.html"
 }
 
 // Aplica configs ao carregar a página

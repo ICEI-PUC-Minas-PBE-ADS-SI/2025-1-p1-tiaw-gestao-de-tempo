@@ -3,12 +3,6 @@
     {
       "pc": 100,
       "id": 1
-    },
-    {
-      "nome": "User_1",
-      "user": "User_1",
-      "senha": "123456",
-      "id": 2
     }
   ],
   "recursos": [
@@ -18,68 +12,5 @@
     }
   ],
   "tarefa": [
-    {
-      "nome": "Dom",
-      "inicio": "10:00",
-      "fim": "17:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "dom",
-      "id": 1
-    },
-    {
-      "nome": "Seg",
-      "inicio": "10:00",
-      "fim": "16:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "seg",
-      "id": 2
-    },
-    {
-      "nome": "Ter",
-      "inicio": "10:00",
-      "fim": "15:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "ter",
-      "id": 3
-    },
-    {
-      "nome": "Qua",
-      "inicio": "10:00",
-      "fim": "14:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "qua",
-      "id": 4
-    },
-    {
-      "nome": "Qui",
-      "inicio": "10:00",
-      "fim": "13:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "qui",
-      "id": 5
-    },
-    {
-      "nome": "Sex",
-      "inicio": "10:00",
-      "fim": "12:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "sex",
-      "id": 6
-    },
-    {
-      "nome": "Sab",
-      "inicio": "10:00",
-      "fim": "16:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "sab",
-      "id": 7
-    }
   ]
 }
