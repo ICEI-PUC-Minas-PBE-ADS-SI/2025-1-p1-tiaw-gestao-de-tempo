@@ -1,4 +1,31 @@
 //tools
+function clearBoxes(){
+    gebiTXT('b1r1','')
+    gebiTXT('b1r2','')
+    gebiTXT('b1r3','')
+
+    gebiTXT('b2r1','')
+    gebiTXT('b2r2','')
+    gebiTXT('b2r3','')
+
+    gebiTXT('b3r1','')
+    gebiTXT('b3r2','')
+    gebiTXT('b3r3','')
+
+    gebiTXT('b1q1','')
+    gebiTXT('b1q1','')
+    gebiTXT('b1q1','')
+
+    gebiTXT('b2q1','')
+    gebiTXT('b2q1','')
+    gebiTXT('b2q1','')
+
+    gebiTXT('b3q1','')
+    gebiTXT('b3q1','')
+    gebiTXT('b3q1','')
+}
+
+
 function gebiTOTAL(x,y,z){
     let show=document.getElementById(x).textContent
     let show2=document.getElementById(y).textContent 

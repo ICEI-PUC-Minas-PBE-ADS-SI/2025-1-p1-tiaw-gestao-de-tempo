@@ -83,6 +83,10 @@ async function cadastrar() {
       nome: nome.value,
       user: usuario.value,
       senha: senha.value
+      
+    }
+    const novoRecurso= {
+     pc:0
     };
 
     try {
@@ -90,6 +94,11 @@ async function cadastrar() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(novoUsuario)
+      });
+      const response2= await fetch('http://localhost:3000/recursos', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(novoRecurso)
       });
 
       if (response.ok) {

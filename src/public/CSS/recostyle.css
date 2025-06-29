@@ -97,10 +97,12 @@ body{
     font-size: 21px;
 }
 
-.redeem{
+.coletar{
     position: absolute;
     font-family: "Instrument Sans";
     cursor: pointer;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 

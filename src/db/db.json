@@ -1,14 +1,26 @@
 {
   "usuarios": [
     {
-      "pc": 100,
+      "nome": "Christian Diniz",
+      "user": "kurisnya",
+      "senha": "pepeanimal7",
       "id": 1
+    },
+    {
+      "nome": "rodrigo",
+      "user": "gostosinho",
+      "senha": "charmander",
+      "id": 2
     }
   ],
   "recursos": [
     {
-      "pc": 4660,
+      "pc": 34960,
       "id": 1
+    },
+    {
+      "pc": 3040,
+      "id": 2
     }
   ],
   "tarefa": [

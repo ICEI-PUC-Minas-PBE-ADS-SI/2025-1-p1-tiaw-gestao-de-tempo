@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="CSS/diasemana.css" />
   <script>
     function salvarProgresso(valor) {
-      localStorage.setItem('progressoSegunda', valor);
+      localStorage.setItem('progressoQuarta', valor);
     }
 
     function atualizarBarra() {
@@ -19,7 +19,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      const progressoSalvo = localStorage.getItem('progressoSegunda') || '0';
+      const progressoSalvo = localStorage.getItem('progressoQuarta') || '0';
       document.getElementById('progressoInput').value = progressoSalvo;
       atualizarBarra();
     });
