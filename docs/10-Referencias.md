@@ -1,11 +1,5 @@
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc.) utilizadas no desenvolvimento do trabalho.
-
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
-
-⚠️ EXEMPLO ⚠️
-
 - BENYON, David. **Interação humano-computador**. 2. ed. São Paulo: Pearson Prentice Hall, 2011.
 
 - CORMEN, Thomas H et al. **Algoritmos:** teoria e prática. 4. ed. Rio de Janeiro: GEN LTC, 2024.

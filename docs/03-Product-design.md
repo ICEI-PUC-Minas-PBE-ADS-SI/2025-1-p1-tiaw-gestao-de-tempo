@@ -1,6 +1,6 @@
 # Product design
 
-[text](<files/Mapa da Proposta de Valor (1).pdf>)
+[text](<images/Mapa da Proposta de Valor (1).jpg>)
 
 
 ## Histórias de usuários
@@ -20,7 +20,7 @@ Com base na análise das personas, foram identificadas as seguintes histórias d
 
 ✳️✳️✳️ APRESENTE O DIAGRAMA DA PROPOSTA DE VALOR PARA CADA PERSONA ✳️✳️✳️
 
-[text](<files/Mapa da Proposta de Valor (2).pdf>)
+![Mapa](<images/Mapa da Proposta de Valor (2)_page-0001.jpg>)
 
 
 ### Requisitos funcionais

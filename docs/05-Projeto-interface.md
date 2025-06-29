@@ -8,13 +8,13 @@
  Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados na parte de <a href="03-Product-design.md"> product design</a></span>.
 
  ## User flow
-[text](<docs\files\caminho do usuario.pdf>)
+![Wire](images/caminho_do_usuario(2).jpg)
 
 Caminho do usuario
 
 ## Wireframes
 
-[text](<docs\files\Wireframe (1).pdf>)
+![Wire](images/Wireframe%20(1).jpg)
 
 Wireframe da pagina principal
  

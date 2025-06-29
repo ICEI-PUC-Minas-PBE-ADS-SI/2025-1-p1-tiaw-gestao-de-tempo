@@ -6,13 +6,13 @@
 
 ## Etapa de entendimento
 
-Matriz CSD: [text](<files/Matriz CSD (1).pdf>)
+Matriz CSD: ![Matriz CSD](<images/Matriz CSD (1)_page-0001.jpg>)
 
-Mapa de stakeholders: [text](<files/Mapa de Stakeholders (1).pdf>)
+Mapa de stakeholders: ![Stakehoders](<images\Mapa de Stakeholders (1)_page-0001.jpg>)
 
-Entrevistas qualitativas: [text](<files/Entrevista Qualitativa (1).pdf>)
+Entrevistas qualitativas: ![Entrevista](<images/Entrevista Qualitativa (1).jpg>)
 
-Highlights de pesquisa: [text](<files/Highlights de Pesquisa (1).pdf>)
+Highlights de pesquisa: ![Highlights](<images/Highlights de Pesquisa (1).jpg>)
 
 
 ## Etapa de definição
