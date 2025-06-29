@@ -1,6 +1,6 @@
 # Product design
 
-[text](<images/Mapa da Proposta de Valor (1).jpg>)
+![text](<images/Mapa da Proposta de Valor (1).jpg>)
 
 
 ## Histórias de usuários
@@ -13,7 +13,7 @@ Com base na análise das personas, foram identificadas as seguintes histórias d
 
 |EU COMO... Eliane   | QUERO/PRECISO de um softwaare que auxilie meu controle de tempo |PARA que eu pare de procastinar.|
 
-[text](images/Personas%20e%20Histórias%20(2).jpg)
+![text](images/Personas%20e%20Histórias%20(2).jpg)
 
 
 ## Proposta de valor
