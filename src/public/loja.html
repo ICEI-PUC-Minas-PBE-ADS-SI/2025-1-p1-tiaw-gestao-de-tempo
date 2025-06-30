@@ -16,6 +16,7 @@
     <!--PRODUTOS-->  <!--COMENTÁRIO DO PROJETO: A IDÉIA É FAZER A INTERFACE APRESENTAR PARA O USUÁRIO, DE INÍCIO,
      DECKS DE ITENS PARA SELECIONAR A CATEGORIA DOS MESMOS, CADA DECK TERÁ UM SÍMBOLO E SE ABRIRÁ PARA EXPOR OS ITENS, DESTA MANEIRA AS CATEGORIAS DOS ITENS SERÃO APRESENTADAS.-->
     <div class="teste">
+        <h1 class="instsans" id="pcatual"></h1>
         <div class="produto">
             <img class="produtoIMG" src="imagens/cupcake.png" alt="">
             <p class="produtoPRECO instsans">1234</p>
@@ -83,5 +84,21 @@
     </div>
     <div class="comentario instsans"><i class="fa-solid fa-angles-left"></i><i><b>Infelizmente desenvolvedores não são imunes à dor de cabeça.</b></i><i class="fa-solid fa-angles-right"></i>
     </div>
+<script>
+    async function rogerio() {
+        try{
+            const res= await fetch(`http://localhost:3000/recursos/${sessionStorage.getItem('userId')}`)
+            const data= await res.json()
+
+            document.getElementById('pcatual').textContent='PC: '+ data.pc
+        }
+        catch{
+        
+
+        }
+   
+    }
+    rogerio()
+</script>
 </body>
 </html>

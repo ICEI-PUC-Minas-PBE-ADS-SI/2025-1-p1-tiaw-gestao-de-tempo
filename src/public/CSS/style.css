@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
+a{
+    text-decoration: none;
+}
 header {
     width: 100%;
     background: linear-gradient(to right, purple, steelblue);
@@ -111,6 +113,7 @@ main {
     height: 90px;
     background: blueviolet;
     border-radius: 47%;
+    color: black;
 }
 
 aside {

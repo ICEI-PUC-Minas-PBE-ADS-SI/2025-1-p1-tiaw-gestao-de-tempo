@@ -56,7 +56,7 @@
             <p id="b3q1" class="inneritem total"></p>
         </div>
     </div>
-    <p class="coletar" onclick="postPoints()"><i class="fa-solid fa-angle-left"></i>CLIQUE AQUI PARA SEUS PONTOS!<i class="fa-solid fa-angle-right"></i></p>    
+    <p class="coletar" onclick="postPoints()"><i class="fa-solid fa-angle-left"></i>CLIQUE AQUI PARA COLETAR SEUS PONTOS!<i class="fa-solid fa-angle-right"></i></p>    
 
 
 
@@ -112,26 +112,36 @@
 
         //TESTES:-------------------------------------------------------------------------
         //TESTES: CRIAR VALORES
+        const temposDom= localStorage.getItem('progressoDomingo')
+        const temposSeg= localStorage.getItem('progressoSegunda')
+        const temposTer= localStorage.getItem('progressoTerca')
+        const temposQua= localStorage.getItem('progressoQuarta')
+        const temposQui= localStorage.getItem('progressoQuinta')
+        const temposSex= localStorage.getItem('progressoSexta')
+        const temposSab= localStorage.getItem('progressoSabado')
+
+
         function test(){
             let box1={
-                tempo: 10, //TEMPO EM UNIDADE
-                default: 100, //RECOMPENSA PADRÃO POR COMPLETAR A TAREFA
-                combo: 1 //COMBO BONUS AO COMPLETAR VÁRIAS TAREFAS
+                tempo: temposDom, //TEMPO EM UNIDADE
+                default: temposSeg, //RECOMPENSA PADRÃO POR COMPLETAR A TAREFA
+                combo: 2 //COMBO BONUS AO COMPLETAR VÁRIAS TAREFAS
             }
             let rodrigo={
-                tempo:10,
-                default:10,
+                tempo: temposTer,
+                default:temposQua,
                 combo:2
             }
             let box3={
-                tempo: 30,
-                default: 40,
-                combo: 35
+                tempo: temposQui,
+                default: temposSex,
+                combo: 2
             }
             localStorage.setItem('beta',JSON.stringify(rodrigo))
             localStorage.setItem('charlie',JSON.stringify(box3))
             localStorage.setItem('alpha', JSON.stringify(box1))
         }
+        test()
         //TESTES: EXCLUIR VALORES
         function limpar(){
            localStorage.clear()    

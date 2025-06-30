@@ -1,31 +1,21 @@
 {
   "usuarios": [
     {
-      "nome": "Christian Diniz",
-      "user": "kurisnya",
-      "senha": "pepeanimal7",
+      "nome": "ddsad",
+      "user": "12345",
+      "senha": "123456",
       "id": 1
-    },
-    {
-      "nome": "rodrigo",
-      "user": "gostosinho",
-      "senha": "charmander",
-      "id": 2
     }
   ],
   "recursos": [
     {
-      "pc": 34960,
+      "pc": 7520,
       "id": 1
-    },
-    {
-      "pc": 3040,
-      "id": 2
     }
   ],
   "tarefa": [
     {
-      "nome": "asas",
+      "nome": "cfssdf",
       "inicio": "10:00",
       "fim": "11:00",
       "necessario": false,
@@ -34,67 +24,13 @@
       "id": 1
     },
     {
-      "nome": "asas",
-      "inicio": "10:00",
-      "fim": "11:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "dom",
-      "id": 2
-    },
-    {
-      "nome": "assas",
-      "inicio": "10:00",
-      "fim": "11:00",
+      "nome": "jfdsjksdfjklsdfljk",
+      "inicio": "01:00",
+      "fim": "20:20",
       "necessario": false,
       "obs": "",
       "dia": "seg",
-      "id": 3
-    },
-    {
-      "nome": "sss",
-      "inicio": "10:00",
-      "fim": "11:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "ter",
-      "id": 4
-    },
-    {
-      "nome": "sss",
-      "inicio": "10:00",
-      "fim": "11:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "qua",
-      "id": 5
-    },
-    {
-      "nome": "ssss",
-      "inicio": "10:00",
-      "fim": "11:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "qui",
-      "id": 6
-    },
-    {
-      "nome": "sss",
-      "inicio": "10:00",
-      "fim": "11:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "sex",
-      "id": 7
-    },
-    {
-      "nome": "ssss",
-      "inicio": "10:00",
-      "fim": "11:00",
-      "necessario": false,
-      "obs": "",
-      "dia": "sab",
-      "id": 8
+      "id": 2
     }
   ]
 }
