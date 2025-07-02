@@ -17,17 +17,17 @@
     <div class="teste">
         <h1 class="instsans" id="pcatual"></h1>
         <div class="produto">
-            <img id="img1" class="produtoIMG" src="imagens/cupcake.png" alt="">
+            <img onclick="buy1()" id="img1" class="produtoIMG" src="" alt="">
             <p id="preco1" class="produtoPRECO instsans">ERROR </p>
             <p id="rank1" class="produtoRANK instsans">ERROR <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
         </div>
         <div class="produto">
-            <img id="img2" class="produtoIMG" src="imagens/cupcake.png" alt="">
+            <img onclick="buy2()" id="img2" class="produtoIMG" src="" alt="">
             <p id="preco2" class="produtoPRECO instsans">ERROR </p>
             <p id="rank2" class="produtoRANK instsans">ERROR <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
         </div>
         <div class="produto">
-            <img id="img3" class="produtoIMG" src="imagens/cupcake.png" alt="">
+            <img onclick="buy3()" id="img3" class="produtoIMG" src="" alt="">
             <p id="preco3" class="produtoPRECO instsans">ERROR </p>
             <p id="rank3" class="produtoRANK instsans">ERROR <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
         </div>
@@ -50,6 +50,75 @@
     <div class="comentario instsans"><i class="fa-solid fa-angles-left"></i><i><b>Infelizmente desenvolvedores não são imunes à dor de cabeça.</b></i><i class="fa-solid fa-angles-right"></i>
     </div>
 <script>
+    //FETCH PATCH: Lançar PC pós compra
+    async function Patch1(item) {
+        try{
+            const res= await fetch(`http://localhost:3000/recursos/${sessionStorage.getItem('userId')}`,{
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    pc: item
+                })
+            })
+            comsole.log("pc atualizado com êxito")
+        }
+        catch{}
+    }
+    //FETCH PATCH: Lançar produto 1 no inventário o usuário
+    async function PatchItem1() {
+        try{
+            const res= await fetch(`http://localhost:3000/usuarios/${sessionStorage.getItem('userId')}`,{
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    item1: true
+                })
+            })
+            comsole.log("pc atualizado com êxito")
+        }
+        catch{}
+    }
+
+    //FETCH PATCH: Lançar produto 2 no inventário o usuário
+    async function PatchItem2() {
+    try{
+        const res= await fetch(`http://localhost:3000/usuarios/${sessionStorage.getItem('userId')}`,{
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                item2: true
+            })
+        })
+        comsole.log("pc atualizado com êxito")
+    }
+    catch{}
+    }
+
+    //FETCH PATCH: Lançar produto 3 no inventário o usuário
+
+    async function PatchItem3() {
+    try{
+    const res= await fetch(`http://localhost:3000/usuarios/${sessionStorage.getItem('userId')}`,{
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            item3: true
+        })
+    })
+     comsole.log("pc atualizado com êxito")
+        }
+        catch{}
+    }
+
+
 
     //PCS ATUAIS
     async function rogerio() {
@@ -94,9 +163,131 @@
             document.getElementById('img3').src= data3.img
             document.getElementById('rank3').innerHTML= data3.rank+'<i class="fa-solid fa-star" style="color: #FFD43B;"></i>'
         }
-
         catch{}
+
+
+
+        
     }
+
+    //COMPRAR ITEM
+    async function buy1(){
+    try{
+        //RECEBE OS PC ATUAIS DO SERVIDOR
+        const res = await fetch(`http://localhost:3000/recursos/${sessionStorage.getItem('userId')}`)
+        const data= await res.json()
+        const PC= await data.pc
+        let intPC= parseInt(PC)
+        
+        //RECEBE O PREÇO DA COMPRA
+        const preco=document.getElementById('preco1').textContent
+        const price= preco.slice(3,999)
+        const intPrice= parseInt(price)
+
+        //RECEBE SE O ITEM JÁ FOI COMPRADO
+        const res2= await fetch(`http://localhost:3000/usuarios/${sessionStorage.getItem('userId')}`)
+        const data2= await res2.json()
+
+        //CONDICIONAL DE COMPRA
+        if(intPC> intPrice && !data2.item1){
+
+            intPC= intPC - intPrice
+            Patch1(intPC)
+
+            const Item1= true;
+            PatchItem1()
+            window.location.href='loja.html'
+        }
+        else if(data2.item1){
+            alert('Voce já tem esse item!')
+        }
+        else if(intPC< intPrice){
+            alert('PC insuficiente para a compra :(')
+        }
+    }
+    catch{}
+    }
+
+    //COMPRAR ITEM 2
+    async function buy2(){
+    try{
+        //RECEBE OS PC ATUAIS DO SERVIDOR
+        const res = await fetch(`http://localhost:3000/recursos/${sessionStorage.getItem('userId')}`)
+        const data= await res.json()
+        const PC= await data.pc
+        let intPC= parseInt(PC)
+        
+        //RECEBE O PREÇO DA COMPRA
+        const preco=document.getElementById('preco2').textContent
+        const price= preco.slice(3,999)
+        const intPrice= parseInt(price)
+
+        //RECEBE SE O ITEM JÁ FOI COMPRADO
+        const res2= await fetch(`http://localhost:3000/usuarios/${sessionStorage.getItem('userId')}`)
+        const data2= await res2.json()
+
+        //CONDICIONAL DE COMPRA
+        if(intPC> intPrice && !data2.item2){
+
+            intPC= intPC - intPrice
+            Patch1(intPC)
+
+            PatchItem2()
+            console.log('hi')
+            window.location.href='loja.html'
+        }
+        else if(data2.item2){
+            alert('Voce já tem esse item!')
+        }
+        else if(intPC< intPrice){
+            alert('PC insuficiente para a compra :(')
+        }
+    }
+    catch{}
+    }
+
+
+    //COMPRAR ITEM 3
+    async function buy3(){
+    try{
+        //RECEBE OS PC ATUAIS DO SERVIDOR
+        const res = await fetch(`http://localhost:3000/recursos/${sessionStorage.getItem('userId')}`)
+        const data= await res.json()
+        const PC= await data.pc
+        let intPC= parseInt(PC)
+        
+        //RECEBE O PREÇO DA COMPRA
+        const preco=document.getElementById('preco3').textContent
+        const price= preco.slice(3,999)
+        const intPrice= parseInt(price)
+
+        //RECEBE SE O ITEM JÁ FOI COMPRADO
+        const res2= await fetch(`http://localhost:3000/usuarios/${sessionStorage.getItem('userId')}`)
+        const data2= await res2.json()
+
+        //CONDICIONAL DE COMPRA
+        if(intPC> intPrice && !data2.item3){
+
+            intPC= intPC - intPrice
+            console.log('hi')
+            Patch1(intPC)
+
+            PatchItem3()
+            console.log('hi')
+            window.location.href='loja.html'
+        }
+        else if(data2.item3){
+            alert('Voce já tem esse item!')
+        }
+        else if(intPC< intPrice){
+            alert('PC insuficiente para a compra :(')
+        }
+    }
+    catch{}
+    }
+    
+
+
     showItems()
 </script>
 </body>

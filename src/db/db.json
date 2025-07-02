@@ -4,39 +4,41 @@
       "nome": "ddsad",
       "user": "12345",
       "senha": "123456",
-      "id": 1
+      "id": 1,
+      "item1": true,
+      "item2": true,
+      "item3": true
     }
   ],
   "recursos": [
     {
-      "pc": 7800,
+      "pc": 840000,
       "id": 1
     }
   ],
-  "itens":[
+  "itens": [
     {
-    "id":1,
-    "nome": "Troféu 1",
-    "img":"imagens/TROPHY1.png",
-    "valor": "10000",
-    "rank":"1"
+      "id": 1,
+      "nome": "Troféu 1",
+      "img": "imagens/TROPHY1.png",
+      "valor": "10000",
+      "rank": "1"
     },
     {
-    "id":2,
-    "nome": "Troféu 2",
-    "img":"",
-    "valor": "50000",
-    "rank":"5"
+      "id": 2,
+      "nome": "Troféu 2",
+      "img": "imagens/TROPHY2.png",
+      "valor": "50000",
+      "rank": "5"
     },
     {
-    "id":3,
-    "nome": "Troféu 3",
-    "img":"",
-    "valor": "100000",
-    "rank":"10"
+      "id": 3,
+      "nome": "Troféu 3",
+      "img": "imagens/TROPHY3.png",
+      "valor": "100000",
+      "rank": "10"
     }
-
-],
+  ],
   "tarefa": [
     {
       "nome": "cfssdf",
