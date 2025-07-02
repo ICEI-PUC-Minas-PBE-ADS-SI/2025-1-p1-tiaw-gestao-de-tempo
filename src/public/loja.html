@@ -13,60 +13,25 @@
 <body>
     <h1 class="winphrase">Monte da<br>Concen-<br>tração</h1>
     
-    <!--PRODUTOS-->  <!--COMENTÁRIO DO PROJETO: A IDÉIA É FAZER A INTERFACE APRESENTAR PARA O USUÁRIO, DE INÍCIO,
-     DECKS DE ITENS PARA SELECIONAR A CATEGORIA DOS MESMOS, CADA DECK TERÁ UM SÍMBOLO E SE ABRIRÁ PARA EXPOR OS ITENS, DESTA MANEIRA AS CATEGORIAS DOS ITENS SERÃO APRESENTADAS.-->
+    <!--PRODUTOS-->
     <div class="teste">
         <h1 class="instsans" id="pcatual"></h1>
         <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
+            <img id="img1" class="produtoIMG" src="imagens/cupcake.png" alt="">
+            <p id="preco1" class="produtoPRECO instsans">ERROR </p>
+            <p id="rank1" class="produtoRANK instsans">ERROR <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
         </div>
         <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
+            <img id="img2" class="produtoIMG" src="imagens/cupcake.png" alt="">
+            <p id="preco2" class="produtoPRECO instsans">ERROR </p>
+            <p id="rank2" class="produtoRANK instsans">ERROR <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
         </div>
         <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
+            <img id="img3" class="produtoIMG" src="imagens/cupcake.png" alt="">
+            <p id="preco3" class="produtoPRECO instsans">ERROR </p>
+            <p id="rank3" class="produtoRANK instsans">ERROR <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
         </div>
-        <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
-        </div>
-        <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
-        </div>
-        <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
-        </div>
-        <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
-        </div>
-        <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
-        </div>
-        <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
-        </div>
-        <div class="produto">
-            <img class="produtoIMG" src="imagens/cupcake.png" alt="">
-            <p class="produtoPRECO instsans">1234</p>
-            <p class="produtoRANK instsans">123 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
-        </div>
+       
         
         
     </div>
@@ -85,6 +50,8 @@
     <div class="comentario instsans"><i class="fa-solid fa-angles-left"></i><i><b>Infelizmente desenvolvedores não são imunes à dor de cabeça.</b></i><i class="fa-solid fa-angles-right"></i>
     </div>
 <script>
+
+    //PCS ATUAIS
     async function rogerio() {
         try{
             const res= await fetch(`http://localhost:3000/recursos/${sessionStorage.getItem('userId')}`)
@@ -92,13 +59,45 @@
 
             document.getElementById('pcatual').textContent='PC: '+ data.pc
         }
-        catch{
-        
-
-        }
-   
-    }
+        catch{}
+   }
     rogerio()
+
+
+    //MOSTRAR ITENS
+    async function showItems(){
+        try{
+            //ITEM 1
+            const res= await fetch('http://localhost:3000/itens/1')
+            const data= await res.json()
+            
+
+            document.getElementById('preco1').textContent='PC '+ data.valor
+            document.getElementById('img1').src= data.img
+            document.getElementById('rank1').innerHTML= data.rank+'<i class="fa-solid fa-star" style="color: #FFD43B;"></i>'
+            
+            //ITEM 2
+            const res2= await fetch('http://localhost:3000/itens/2')
+            const data2= await res2.json()
+            
+
+            document.getElementById('preco2').textContent='PC '+ data2.valor
+            document.getElementById('img2').src= data2.img
+            document.getElementById('rank2').innerHTML= data2.rank+'<i class="fa-solid fa-star" style="color: #FFD43B;"></i>'
+
+            //ITEM 3
+            const res3= await fetch('http://localhost:3000/itens/3')
+            const data3= await res3.json()
+            
+
+            document.getElementById('preco3').textContent='PC '+ data3.valor
+            document.getElementById('img3').src= data3.img
+            document.getElementById('rank3').innerHTML= data3.rank+'<i class="fa-solid fa-star" style="color: #FFD43B;"></i>'
+        }
+
+        catch{}
+    }
+    showItems()
 </script>
 </body>
 </html>

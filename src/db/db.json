@@ -9,10 +9,34 @@
   ],
   "recursos": [
     {
-      "pc": 7520,
+      "pc": 7800,
       "id": 1
     }
   ],
+  "itens":[
+    {
+    "id":1,
+    "nome": "Troféu 1",
+    "img":"imagens/TROPHY1.png",
+    "valor": "10000",
+    "rank":"1"
+    },
+    {
+    "id":2,
+    "nome": "Troféu 2",
+    "img":"",
+    "valor": "50000",
+    "rank":"5"
+    },
+    {
+    "id":3,
+    "nome": "Troféu 3",
+    "img":"",
+    "valor": "100000",
+    "rank":"10"
+    }
+
+],
   "tarefa": [
     {
       "nome": "cfssdf",
